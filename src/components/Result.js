@@ -17,20 +17,20 @@ export default function Result({ data, postKey }) {
     updates["/user-posts/" + data.uids + "/" + postKey] = newUpdate;
     return update(ref(db), updates);
   };
-  const componentMapping = { Medium, Regular, Chonky };
-  const body = componentMapping["Medium"];
+  const componentMapping = { medium: Medium, regular: Regular, chonky: Chonky };
+  const body = componentMapping["chonky"];
   return (
     <>
       <div id={data.id}>
         {createElement(body, { fill: data.color })}
         <div>
           <ul>
-            <li>name: {data.name}</li>
-            <li>color: {data.color}</li>
-            <li>location: {data.location}</li>
-            <li>uids: {data.uids}</li>
-            <li>id: {data.id}</li>
-            <li>id: {postKey}</li>
+            <li>Name: {data.name}</li>
+            <li>Color: {data.color}</li>
+            <li>Body: {data.body}</li>
+            <li>Eyes: {data.eyes}</li>
+            <li>User: {data.uids}</li>
+            <li>Key: {postKey}</li>
           </ul>
         </div>
         <button onClick={deletePost}>delete</button>

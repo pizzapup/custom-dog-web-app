@@ -1,9 +1,12 @@
 import Form from "./components/Form";
 import List from "./components/List";
+import CreatePost from "./components/Post/CreatePost";
 import "./styles.css";
+import { LoginForm } from "./utils/firebaseAuth";
 function App() {
   return (
     <div className="App">
+      <LoginForm />
       <nav>
         <ul>
           <li>
@@ -14,7 +17,7 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Form />
+      <CreatePost />
       <List />
     </div>
   );
