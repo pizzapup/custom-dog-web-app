@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { database as db } from "../utils/firebase";
 import { onValue, ref } from "firebase/database";
-import Card from "./Card";
-
+// import Card from "./Card";
+import Result from "./Result";
+const Card = Result;
 export default function List() {
   const [list, setList] = useState();
   useEffect(() => {

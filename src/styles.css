@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --radii: 5px;
+  --border-default: 2px solid transparent;
+}
+button {
+  min-width: 45px;
+  min-height: 45px;
+  padding: 10px 15px;
+  border: 2px solid transparent;
+  outline: 2px dashed transparent;
+  border-radius: 5px;
+}
+button:focus,
+button:focus-visible,
+button:hover {
+  outline: 2px dashed black;
+  outline-offset: 1px;
+  background-color: aliceblue;
+  transition: background 200ms ease;
+}
+button:active {
+  background-color: darkorange;
+}
+
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  button {
+    height: 55px;
+  }
+}
+
+input[type="text"] {
+  padding: 15px;
+  border-radius: 5px;
+  border: var(--border-default);
+  border-color: #949494;
+}
+input[type="text"]:hover {
+  border-color: rgb(117, 117, 117);
+}
+input[type="text"]:focus {
+  border-color: rgb(38, 106, 202);
+  outline: rgb(31, 93, 182) dashed 2px;
+  outline-offset: 1px;
+}
