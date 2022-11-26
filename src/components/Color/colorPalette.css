@@ -1,0 +1,29 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--color-title);
+  background-color: var(--color-bg);
+}
+.img-wrapper {
+  display: flex;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+.swatch-list {
+  display: flex;
+  border-radius: 10px;
+}
+.swatch-list > * {
+  flex: 1;
+}
+.swatch {
+  background-color: var(--color-bg);
+  padding: 10px;
+}

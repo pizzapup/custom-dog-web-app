@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { database as db } from "../utils/firebase";
 import { onValue, ref } from "firebase/database";
-// import Card from "./Card";
+import { database as db } from "../firebase/firebaseConfig";
 import Result from "./Result";
 const Card = Result;
-export default function List() {
+
+export default function List(props) {
   const [list, setList] = useState();
   useEffect(() => {
-    const dbRef = ref(db, "posts/");
+    const dbRef = ref(db, `posts/`);
     onValue(dbRef, (snapshot) => {
       const posts = snapshot.val();
       const postList = [];

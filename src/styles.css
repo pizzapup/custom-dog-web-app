@@ -10,7 +10,8 @@
   --spacer-md: 10px;
   --spacer-sm: 5px;
 }
-button {
+button,
+input::file-selector-button {
   min-width: 45px;
   min-height: 45px;
   padding: 10px 15px;
@@ -20,16 +21,28 @@ button {
 }
 button:focus,
 button:focus-visible,
-button:hover {
+button:hover,
+input::file-selector-button:focus,
+input::file-selector-button:focus-visible,
+input::file-selector-button:hover {
   outline: 2px dashed black;
   outline-offset: 1px;
   background-color: aliceblue;
   transition: background 200ms ease;
 }
-button:active {
+button:active,
+input::file-selector-button:active {
   background-color: darkorange;
 }
-
+input::file-selector-button {
+  background-color: #101010;
+  color: white;
+}
+input::file-selector-button:focus,
+input::file-selector-button:focus-visible,
+input::file-selector-button:hover {
+  background-color: #257801;
+}
 @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
   button {
     height: 55px;

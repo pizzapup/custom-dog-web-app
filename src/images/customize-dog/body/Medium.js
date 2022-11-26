@@ -9,7 +9,7 @@ const Medium = ({ fill }) => {
       y="0px"
       width="100%"
       viewBox="0 0 3300 3300"
-      enable-background="new 0 0 3300 3300"
+      //   enable-background="new 0 0 3300 3300"
       //   xml:space="preserve"
     >
       <path

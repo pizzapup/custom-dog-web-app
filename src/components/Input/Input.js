@@ -1,26 +1,18 @@
-import InputGroup from "./InputGroup";
 import "./Input.css";
 
-const Label = (props) =>
-  props.label ? props.label : props.name ? props.name : "no label provided";
 function Input(props) {
-  return props.type === "radio-group" ? (
+  const getLabel = props.label
+    ? props.label
+    : props.name
+    ? props.name
+    : "no label provided";
+  return (
     <>
-      <InputGroup.Radio {...props} />
-    </>
-  ) : (
-    <>
-      <Label {...props} />
-      <input type={props.type} {...props} />
+      <label htmlFor={getLabel}>{getLabel}</label>
+      <input {...props} type={props.type} />
     </>
   );
 }
-// const Input = (props) => {
-//   <>
-//     <Label {...props} />
-//     <input type={props.type} {...props} />
-//   </>;
-// };
 
 Input.Text = (props) => <Input type="text" {...props} />;
 Input.Color = (props) => <Input type="color" {...props} />;

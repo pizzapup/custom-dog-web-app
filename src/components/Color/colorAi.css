@@ -1,0 +1,31 @@
+.color-ai {
+  background-color: #fafafa;
+}
+.color-ai > * {
+  border: pink 2px solid;
+}
+.color-ai {
+  display: flex;
+  flex-direction: column;
+}
+.color-ai form {
+  /* background-color: lightblue; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+textarea {
+  font-size: large;
+}
+.color-ai-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+.color-ai-list img {
+  max-height: 300px;
+  padding: 10px;
+}

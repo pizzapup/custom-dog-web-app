@@ -1,15 +1,18 @@
-input:not([type="checkbox"]):not([type="radio"]) {
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
   padding: 15px;
   border-radius: 5px;
   border: var(--border-default);
   border-color: #949494;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):hover {
+input:not([type="checkbox"]):not([type="radio"]):hover,
+textarea:hover {
   border-color: rgb(117, 117, 117);
 }
 
-input:not([type="checkbox"]):not([type="radio"]):focus {
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus {
   border-color: rgb(38, 106, 202);
   outline: rgb(31, 93, 182) dashed 2px;
   outline-offset: 1px;
@@ -68,12 +71,4 @@ fieldset ul {
   width: 100%;
   height: auto;
   padding: 10px;
-}
-input[type="color"] {
-  min-height: 50px;
-}
-
-input[type="color"] {
-  min-width: 60px;
-  padding: 0px;
 }

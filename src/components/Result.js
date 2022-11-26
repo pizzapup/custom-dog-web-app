@@ -1,36 +1,34 @@
-import DogIcon from "../images/dog";
-import { database as db } from "../utils/firebase";
-import { ref, child, push, update, remove } from "firebase/database";
-import { createElement, useState } from "react";
-import Medium from "../images/customize-dog/body/Medium";
-import Regular from "../images/customize-dog/body/Regular";
-import Chonky from "../images/customize-dog/body/Chonky";
+import { Medium, Chonky, Regular } from "../images/customize-dog/body";
+import { deleteData, updateData } from "../firebase/dbHelpers";
+const uids = "default-user";
 export default function Result({ data, postKey }) {
-  const deletePost = () => {
-    remove(ref(db, `/posts/${postKey}`));
-    remove(ref(db, `/user-posts/${data.uids}/${postKey}`));
+  const updatePost = (e) => {
+    e.preventDefault();
+    const newUpdate = { ...data, name: "UPDATEDs" };
+    updateData(newUpdate, postKey, ["posts", `user-posts/${uids}/${postKey}`]);
   };
-  const updatePost = () => {
-    const newUpdate = { ...data, name: "FIDO" };
-    const updates = {};
-    updates["/posts/" + postKey] = newUpdate;
-    updates["/user-posts/" + data.uids + "/" + postKey] = newUpdate;
-    return update(ref(db), updates);
+  const deletePost = (e) => {
+    e.preventDefault();
+    deleteData(postKey, [`/posts/`, `/user-posts/${uids}/`]);
   };
-  const componentMapping = { medium: Medium, regular: Regular, chonky: Chonky };
-  const body = componentMapping["chonky"];
+
+  const componentMapping = {
+    medium: <Medium />,
+    regular: <Regular />,
+    chonky: <Chonky />,
+  };
   return (
     <>
       <div id={data.id}>
-        {createElement(body, { fill: data.color })}
+        {componentMapping[`${data.body}`]}
         <div>
           <ul>
-            <li>Name: {data.name}</li>
-            <li>Color: {data.color}</li>
-            <li>Body: {data.body}</li>
-            <li>Eyes: {data.eyes}</li>
-            <li>User: {data.uids}</li>
-            <li>Key: {postKey}</li>
+            <li key="1">Name: {data.name}</li>
+            <li key="2">Color: {data.color}</li>
+            <li key="3">Body: {data.body}</li>
+            <li key="4">Eyes: {data.eyes}</li>
+            <li key="5">User: {data.uids}</li>
+            <li key="6">Key: {postKey}</li>
           </ul>
         </div>
         <button onClick={deletePost}>delete</button>
