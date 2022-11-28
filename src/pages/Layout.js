@@ -1,21 +1,33 @@
 import { NavLink, Outlet } from "react-router-dom";
-import "../styles/input.css";
-import "../styles.css";
+const pages = [
+  { to: "/home", title: "Home" },
+  { to: "/post", title: "Post" },
+  { to: "/test", title: "Test" },
+  { to: "/signup", title: "Sign Up" },
+  { to: "/color", title: "Color" },
+  { to: "/ai", title: "AI" },
+];
+
 export function Layout() {
   return (
     <>
       <nav>
-        test
-        <NavLink to="/home">Home</NavLink>
-        <NavLink to="/createpost">Post</NavLink>
-        <NavLink to="/test">Test</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <NavLink to="/color">color</NavLink>
-        <NavLink to="/colorAI">AI</NavLink>
+        <ul>
+          {pages.map((page, index) => (
+            <li key={index}>
+              <NavLink
+                to={page.to}
+                className={({ isActive }) =>
+                  isActive ? "navlink navlink--active" : "navlink"
+                }
+              >
+                {page.title}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
       </nav>
       <Outlet />
-      {/* <LoginForm /> */}
-      {/* <CreatePost /> */}
     </>
   );
 }

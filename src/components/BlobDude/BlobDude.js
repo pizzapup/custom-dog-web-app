@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./colorBlob.css";
+import "./blobDude.css";
 
-export default function ColorBlob() {
+export default function BlobDude() {
   const [open, setOpen] = useState(false);
   return (
     <>

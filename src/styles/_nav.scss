@@ -1,0 +1,42 @@
+@import "./mixins";
+
+nav {
+    background-color: pink;
+    display: flex;
+    justify-content: space-around;
+
+    ul {
+        list-style: none;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+    }
+
+    a {
+        &:active {
+            color: orange
+        }
+    }
+
+    .navlink {
+        text-decoration-color: transparent;
+        padding: 10px 15px;
+        // border-radius: $radii;
+        border-radius: var(--radii);
+        background-color: #fafafa;
+        white-space: nowrap;
+
+        @include hover-focus-all {
+            background-color: aliceblue;
+            text-decoration-color: purple;
+        }
+    }
+
+    .navlink--active {
+        @extend .navlink;
+        font-weight: bolder;
+        outline: 2px dotted pink;
+    }
+
+
+}

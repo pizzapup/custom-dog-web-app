@@ -1,10 +1,8 @@
-import ColorBlob from "../components/Color/ColorBlob";
-import Upload from "../components/Upload";
+import BlobDude from "../components/BlobDude/BlobDude";
 export default function Home() {
   return (
     <>
-      <Upload />
-      <ColorBlob />
+      <BlobDude />
     </>
   );
 }

@@ -1,5 +1,5 @@
-import { Medium, Chonky, Regular } from "../images/customize-dog/body";
-import { deleteData, updateData } from "../firebase/dbHelpers";
+import { Medium, Chonky, Regular } from "../../images/customize-dog/body";
+import { deleteData, updateData } from "../../firebase/dbHelpers";
 const uids = "default-user";
 export default function Result({ data, postKey }) {
   const updatePost = (e) => {

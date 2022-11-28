@@ -1,0 +1,31 @@
+@mixin default-border($color: transparent) {
+    border: 2px solid $color;
+}
+
+@mixin default-outline($color: transparent) {
+    outline: 2px solid $color;
+}
+
+@mixin default-border-outline($color: transparent) {
+    border: 2px solid $color;
+    outline: 2px solid $color;
+}
+
+@mixin hover-focus-all {
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &:hover {
+        @content
+    }
+}
+
+@mixin focus-all {
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        @content
+    }
+}

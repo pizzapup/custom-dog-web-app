@@ -8,6 +8,7 @@ export default function ColorPalette() {
   const [fileDataURL, setFileDataURL] = useState(null);
   const [newPalette, setNewPalette] = useState(null);
   const imageMimeType = /image\/(png|jpg|jpeg)/i;
+  const [bgColor, setBgColor] = useState(null);
 
   const changeHandler = (e) => {
     const file = e.target.files[0];
@@ -57,6 +58,7 @@ export default function ColorPalette() {
             population: currSwatch.getPopulation(),
             colorName: getNtc(currSwatch.getHex()),
           });
+          swatch === "Muted" && setBgColor(currSwatch.getHex());
         }
         setNewPalette(colors);
         console.table(newPalette);
@@ -80,7 +82,10 @@ export default function ColorPalette() {
       </form>
       {newPalette ? (
         <>
-          <div className="img-wrapper">
+          <div
+            style={{ "--bg-img-wrapper": `${bgColor}` }}
+            className="img-wrapper"
+          >
             <img src={fileDataURL} alt="preview" />
           </div>
           <ul className="swatch-list">
@@ -106,6 +111,7 @@ export default function ColorPalette() {
               );
             })}
           </ul>
+          BG COLOR: {bgColor}
         </>
       ) : (
         <></>

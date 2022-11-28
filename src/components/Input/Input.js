@@ -1,5 +1,3 @@
-import "./Input.css";
-
 function Input(props) {
   const getLabel = props.label
     ? props.label

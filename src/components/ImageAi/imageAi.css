@@ -1,14 +1,14 @@
-.color-ai {
+.image-ai {
   background-color: #fafafa;
 }
-.color-ai > * {
+.image-ai > * {
   border: pink 2px solid;
 }
-.color-ai {
+.image-ai {
   display: flex;
   flex-direction: column;
 }
-.color-ai form {
+.image-ai form {
   /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@
 textarea {
   font-size: large;
 }
-.color-ai-list {
+.image-ai-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -25,7 +25,13 @@ textarea {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
 }
-.color-ai-list img {
+.image-ai-list img {
   max-height: 300px;
   padding: 10px;
+}
+.suspended-comp {
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
 }

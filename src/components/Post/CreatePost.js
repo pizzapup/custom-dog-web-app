@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { writeData } from "../../firebase/dbHelpers";
-import Form from "../Form";
+import Form from "../Form/Form";
 import { Chonky as Chonk } from "../../images/customize-dog/body";
 import { Closed, Squint, Round } from "../../images/customize-dog/eyes/preview";
 import {

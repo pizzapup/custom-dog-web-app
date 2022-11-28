@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { onValue, ref } from "firebase/database";
-import { database as db } from "../firebase/firebaseConfig";
-import Result from "./Result";
+import { database as db } from "../../firebase/firebaseConfig";
+import Result from "../Card/Result";
 const Card = Result;
 
 export default function List(props) {

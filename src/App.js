@@ -1,13 +1,16 @@
+import "./app.scss";
 import "./styles.css";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import List from "./components/List";
+import List from "./components/List/List";
 import { Layout } from "./pages/Layout";
 const Home = lazy(() => import("./pages/Home"));
 const CreatePost = lazy(() => import("./components/Post/CreatePost"));
 const SignUp = lazy(() => import("./pages/SignUp"));
-const ColorAi = lazy(() => import("./components/Color/ColorAi"));
-const ColorPalette = lazy(() => import("./components/Color/ColorPalette"));
+const ImageAi = lazy(() => import("./components/ImageAi/ImageAi"));
+const ColorPalette = lazy(() =>
+  import("./components/ColorPalette/ColorPalette")
+);
 
 export default function App() {
   return (
@@ -51,7 +54,7 @@ export default function App() {
             path="colorAI"
             element={
               <Suspense fallback={<>...</>}>
-                <ColorAi />
+                <ImageAi />
               </Suspense>
             }
           />

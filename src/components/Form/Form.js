@@ -1,5 +1,5 @@
-import Input from "./Input/Input";
-import InputGroup from "./Input/InputGroup";
+import Input from "../Input/Input";
+import InputGroup from "../Input/InputGroup";
 
 export default function Form({ onSubmit, btn, children }) {
   return (

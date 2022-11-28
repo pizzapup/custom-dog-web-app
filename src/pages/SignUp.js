@@ -44,24 +44,10 @@ export default function SignUp() {
 
   return (
     <>
-      hello
+      <h1>Sign Up</h1>
       <form onSubmit={submitForm}>
-        {fieldValues.map((field) => (
-          <>
-            {field.type === "radio-group" ? (
-              <InputGroup.Radio
-                {...field}
-                onChange={handleInputChange}
-                key={field.value}
-              />
-            ) : (
-              <Input
-                {...field}
-                onChange={handleInputChange}
-                key={field.value}
-              />
-            )}
-          </>
+        {fieldValues.map((field, index) => (
+          <Input {...field} onChange={handleInputChange} key={field.value} />
         ))}
         <button type="submit">submit</button>
       </form>

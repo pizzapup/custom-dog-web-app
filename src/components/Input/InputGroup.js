@@ -1,7 +1,6 @@
-import "./Input.css";
 const InputGroup = ({ legend, children }) => (
   <>
-    <fieldset>
+    <fieldset className="input-group">
       <legend>{legend}</legend>
       <ul>{children}</ul>
     </fieldset>
