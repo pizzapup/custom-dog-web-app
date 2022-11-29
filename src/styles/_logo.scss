@@ -1,0 +1,81 @@
+@import "./mixins";
+@import "./variables";
+
+@mixin color-text($front, $back) {
+    color: $front;
+
+    &::before {
+        color: $back;
+
+    }
+
+}
+
+
+.logo {
+
+    * {
+        font-family: 'naiche', var(--font-family-primary);
+        font-variation-settings: 'slnt'25, 'wght'1026;
+        text-decoration: none;
+        text-align: center;
+        text-transform: lowercase;
+        font-size: 35px;
+        letter-spacing: 2px;
+    }
+
+    span {
+        position: relative;
+
+        &::before {
+            content: attr(data-title);
+            position: absolute;
+            bottom: -1px;
+            left: -3px;
+            left: 6px;
+            transform-origin: left;
+            transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: rotateY(25deg);
+        }
+
+        @include screen-larger-than(736px) {
+            &:hover::before {
+                transform: perspective(1000px) rotate(-67deg);
+            }
+        }
+
+
+    }
+
+    .logo1 {
+        @include color-text($orange, $blue)
+    }
+
+    .logo2 {
+        @include color-text($lightblue, $pink)
+    }
+
+    .logo3 {
+        @include color-text($green, $red)
+    }
+
+    .logo4 {
+        @include color-text($yellow, $lightblue)
+    }
+
+    .logo5 {
+        @include color-text($pink, $red)
+    }
+
+    .logo6 {
+        @include color-text(#fffdef, $green)
+    }
+
+    .logo7 {
+        @include color-text($orange, $blue)
+    }
+
+    .logo8 {
+        @include color-text($lightblue, $pink)
+    }
+}

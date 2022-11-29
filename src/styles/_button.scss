@@ -1,0 +1,29 @@
+@import "./mixins";
+
+button,
+.button {
+    min-width: 45px;
+    min-height: 45px;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    outline: 2px dashed transparent;
+    border-radius: 5px;
+
+    &:active {
+        background-color: darkorange;
+    }
+
+    @include hover-focus-all {
+        outline: 2px dashed black;
+        outline-offset: 1px;
+        background-color: aliceblue;
+        transition: background 200ms ease;
+    }
+
+}
+
+.input::file-selector-button {
+    @extend .button;
+    background-color: #101010;
+    color: white;
+}

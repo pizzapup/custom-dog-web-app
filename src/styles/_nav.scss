@@ -1,41 +1,122 @@
 @import "./mixins";
+@import './variables';
+
+header {
+    @include flex(start, baseline, 0px, nowrap);
+    margin-bottom: 10px;
+
+
+    .logo-link {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+
+        @include screen-larger-than(736px) {
+            flex: 0.5;
+
+        }
+
+        @include screen-smaller-than(736px) {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+}
 
 nav {
-    background-color: pink;
-    display: flex;
-    justify-content: space-around;
+    flex: 1;
+
+    .nav-btn {
+        display: none;
+    }
+
+
+    @include screen-smaller-than(736px) {
+        z-index: 998;
+
+        .nav-btn {
+            display: flex;
+            position: fixed;
+            z-index: 999;
+            @include positions(8px, 8px, null, null);
+        }
+
+        .nav {
+            position: fixed;
+            top: -500px;
+            left: 0;
+            right: 0;
+            transition: all .5s ease-out;
+            padding-top: 50px;
+            display: block;
+        }
+
+        input:checked~.nav {
+            top: 0
+        }
+
+
+    }
 
     ul {
         list-style: none;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
-    }
+        display: flex;
+        margin: 0;
+        padding: 0;
+        gap: 10px;
 
-    a {
-        &:active {
-            color: orange
+
+
+        li {
+            flex: 1;
+            @include default-border-outline;
+            text-decoration-color: transparent;
+            border-radius: var(--radii);
+            background-color: #fafafa;
+            white-space: nowrap;
+            min-height: 45px;
+            color: black;
+
+            @include hover-focus-all {
+                background-color: aliceblue;
+            }
+
+            @include focus-all {
+                background-color: aliceblue;
+                text-decoration-color: $blue;
+                outline: 2px dotted $blue;
+            }
+
+            a {
+                text-decoration-color: transparent;
+                text-underline-offset: 2px;
+                text-align: center;
+                @include flex;
+                height: 100%;
+                border-radius: var(--radii);
+
+                @include hover-focus-all {
+                    text-decoration-color: $blue;
+                    color: $blue;
+                }
+            }
+
+            &:has(.navlink--active) {
+                a {
+                    text-decoration-color: $green;
+                    text-decoration-thickness: 2px;
+                    color: $blue;
+
+                    @include hover-focus-all {
+                        text-decoration-color: purple;
+                        text-decoration-thickness: 1px;
+                    }
+                }
+            }
         }
-    }
 
-    .navlink {
-        text-decoration-color: transparent;
-        padding: 10px 15px;
-        // border-radius: $radii;
-        border-radius: var(--radii);
-        background-color: #fafafa;
-        white-space: nowrap;
-
-        @include hover-focus-all {
-            background-color: aliceblue;
-            text-decoration-color: purple;
-        }
-    }
-
-    .navlink--active {
-        @extend .navlink;
-        font-weight: bolder;
-        outline: 2px dotted pink;
     }
 
 

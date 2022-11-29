@@ -11,7 +11,14 @@ const ImageAi = lazy(() => import("./components/ImageAi/ImageAi"));
 const ColorPalette = lazy(() =>
   import("./components/ColorPalette/ColorPalette")
 );
-
+export const pages = [
+  { to: "/home", title: "Home" },
+  { to: "/createpost", title: "Post" },
+  { to: "/test", title: "Test" },
+  { to: "/signup", title: "Sign Up" },
+  { to: "/color", title: "Color" },
+  { to: "/ai", title: "AI" },
+];
 export default function App() {
   return (
     <>
@@ -43,15 +50,7 @@ export default function App() {
             }
           />
           <Route
-            path="signup"
-            element={
-              <Suspense fallback={<>...</>}>
-                <SignUp />
-              </Suspense>
-            }
-          />{" "}
-          <Route
-            path="colorAI"
+            path="ai"
             element={
               <Suspense fallback={<>...</>}>
                 <ImageAi />

@@ -1,4 +1,4 @@
-.image-ai {
+/* .image-ai {
   background-color: #fafafa;
 }
 .image-ai > * {
@@ -9,7 +9,6 @@
   flex-direction: column;
 }
 .image-ai form {
-  /* background-color: lightblue; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -34,4 +33,4 @@ textarea {
   display: flex;
   justify-content: center;
   background-color: #fafafa;
-}
+} */

@@ -29,3 +29,49 @@
         @content
     }
 }
+
+@mixin flex($justify: center, $align: center, $gap: 0px, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+    flex-wrap: $wrap;
+}
+
+@mixin grid-auto-repeat($auto: auto-fit, $gap: 0px, $min: 200px, $max: 1fr) {
+    display: grid;
+    grid-template-columns: repeat($auto, minmax($min, $max));
+    gap: $gap;
+}
+
+
+@mixin screen-larger-than($size) {
+    @media only screen and (min-width: $size) {
+        @content
+    }
+}
+
+@mixin screen-smaller-than($size) {
+    @media only screen and (max-width: $size) {
+        @content
+    }
+}
+
+
+@mixin screen-small {
+    @media only screen and (max-width: 736px) {
+        @content
+    }
+}
+
+@mixin positions($t: 0, $r: 0, $b: 0, $l: 0) {
+    top: $t;
+    right: $r;
+    bottom: $b;
+    left: $l;
+}
+
+@mixin min-touch {
+    min-height: 45px;
+    min-width: 45px;
+}

@@ -8,14 +8,18 @@ import {
   Chonky,
   Medium,
 } from "../../images/customize-dog/body/preview";
-
+import ClosedEyes from "../../images/customize-dog/eyes/Closed";
+import SnoutNose from "../../images/customize-dog/snout/Snout";
+import SmallTail from "../../images/customize-dog/tail/preview-chi.png";
+import ButtonNose from "../../images/customize-dog/snout/Button";
 const uids = "default-user-id";
 
 export default function CreatePost() {
   const initialValues = {
+    name: "fido",
     eyes: "squinty",
     body: "medium",
-    color: "#fafafa",
+    color: "#c7875b",
   };
   const [values, setValues] = useState(initialValues);
   const handleInputChange = (e) => {
@@ -28,10 +32,11 @@ export default function CreatePost() {
   };
   const fieldValues = {
     inputs: [
-      { name: "name", type: "text" },
+      { name: "name", type: "text", placeholder: "fido" },
       {
         name: "color",
         type: "color",
+        placeholder: "#c7875b",
         className: "post-color-picker",
       },
     ],
@@ -45,16 +50,30 @@ export default function CreatePost() {
       { value: "squinty", img: Squint },
       { value: "round", img: Round },
     ],
+    fieldSetTail: [
+      { value: "chihuahua", img: SmallTail },
+      { value: "stub", img: Squint },
+      { value: "round", img: Round },
+    ],
   };
 
   return (
     <>
-      <Chonk fill={values.color} />
-      <Form onSubmit={handleSubmit}>
-        <Form.Inputs
-          fieldValues={fieldValues.inputs}
-          onChange={handleInputChange}
-        />
+      <div className="chonk-container">
+        <Chonk fill={values.color} />
+        <ClosedEyes />
+        <ButtonNose />
+      </div>
+      <Form className="custom-dog-form" onSubmit={handleSubmit}>
+        <fieldset className="custom-dog-form--fieldset">
+          <legend>
+            Name & Color: {values.name} | {values.color}
+          </legend>
+          <Form.Inputs
+            fieldValues={fieldValues.inputs}
+            onChange={handleInputChange}
+          />
+        </fieldset>
         <Form.RadioImgGroup
           fieldValues={fieldValues.fieldSetBody}
           currVal={values.body}

@@ -1,10 +1,25 @@
 @import "./mixins";
 
-input:not([type="checkbox"]):not([type="radio"]),
+input {
+    transition: all 0.2s ease 0s;
+    background-color: #f4f4f5;
+    @include default-border-outline;
+
+    @include hover-focus-all {
+        box-shadow: rgba(234, 76, 137, 0.094) 0px 0px 0px 3.69948px;
+        background-color: transparent;
+    }
+
+    &[type='color'] {
+        @include min-touch
+    }
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type='color']),
 textarea {
     padding: 15px;
     border-radius: 5px;
-    @include default-border(#949494);
+    @include default-border(#f4f4f5);
 
     &:hover {
         border-color: rgb(117, 117, 117);
@@ -14,6 +29,10 @@ textarea {
     @include focus-all {
         border-color: rgb(38, 106, 202);
         outline: rgb(31, 93, 182) dashed 2px;
+        border-color: var(--dribbble-pink);
+        outline: black dashed 2px;
+
+        outline: hsl(380.1, 99.6%, 60.5%) dashed 2px;
         outline-offset: 1px;
     }
 }
@@ -76,4 +95,9 @@ textarea {
             padding: 10px;
         }
     }
+}
+
+.custom-dog-form--fieldset {
+    display: flex;
+    flex-direction: column;
 }
