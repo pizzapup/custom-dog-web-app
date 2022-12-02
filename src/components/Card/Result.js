@@ -1,4 +1,3 @@
-import { Medium, Chonky, Regular } from "../../images/customize-dog/body";
 import { deleteData, updateData } from "../../firebase/dbHelpers";
 const uids = "default-user";
 export default function Result({ data, postKey }) {
@@ -13,14 +12,14 @@ export default function Result({ data, postKey }) {
   };
 
   const componentMapping = {
-    medium: <Medium />,
-    regular: <Regular />,
-    chonky: <Chonky />,
+    // medium: <Body.Medium />,
+    // regular: <Body.Regular />,
+    // chonky: <Body.Chonky />,
   };
   return (
     <>
       <div id={data.id}>
-        {componentMapping[`${data.body}`]}
+        {/* {componentMapping[`${data.body}`]} */}
         <div>
           <ul>
             <li key="1">Name: {data.name}</li>

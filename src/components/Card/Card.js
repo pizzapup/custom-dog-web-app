@@ -1,4 +1,4 @@
-import DogIcon from "../images/dog";
+// import DogIcon from "../images/dog";
 import { database as db } from "../utils/firebase";
 import { ref, child, push, update, remove } from "firebase/database";
 import { useState } from "react";
@@ -8,7 +8,7 @@ export default function Card({ data, postKey }) {
   const deletePost = () => {
     return remove(postRef);
   };
-  };
+
   const updatePost = () => {
     const updateData = { name: "fido", body: "Medium" };
     const updates = {};
@@ -19,7 +19,7 @@ export default function Card({ data, postKey }) {
   return (
     <>
       <div id={data.id}>
-        <DogIcon fill={data.color} />
+        {/* <DogIcon fill={data.color} /> */}
         <div>
           <ul>
             <li>name: {data.name}</li>
